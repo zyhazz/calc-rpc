@@ -24,27 +24,19 @@ calc(char *host, float a, float b, char ope)
 
 	if( ope == '+'){
 		result = soma_1(&ops, clnt);
-		if (result == (float *) NULL) {
-			clnt_perror (clnt, "call failed");
-		}
 	}
 	if( ope == '-'){
 		result = subtracao_1(&ops, clnt);
-		if (result == (float *) NULL) {
-			clnt_perror (clnt, "call failed");
-		}
 	}
 	if( ope == '*'){
 		result = multiplicacao_1(&ops, clnt);
-		if (result == (float *) NULL) {
-			clnt_perror (clnt, "call failed");
-		}
 	}
 	if( ope == '/'){
 		result = divisao_1(&ops, clnt);
-		if (result == (float *) NULL) {
-			clnt_perror (clnt, "call failed");
-		}
+	}
+	
+	if (result == (float *) NULL) {
+		clnt_perror (clnt, "call failed");
 	}
 
 	clnt_destroy (clnt);
